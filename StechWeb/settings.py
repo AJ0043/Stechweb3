@@ -140,3 +140,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-error',
     messages.SUCCESS: 'alert-success',
 }
+
+
+LOGIN_URL = '/Login/'
+SESSION_COOKIE_SECURE = False

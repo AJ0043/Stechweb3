@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib import messages
 from .models import ContactUs
 from django.http import HttpResponseRedirect
-from django.contrib.auth import authenticate, login,logout
+from django.contrib.auth import authenticate, login,logout 
 from django.contrib.auth.models import User
 import re
 from django.utils import timezone
@@ -16,6 +16,7 @@ from xhtml2pdf import pisa
 from django.core.files.storage import FileSystemStorage
 from io import BytesIO
 from django.template.loader import get_template
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -85,7 +86,7 @@ def jobs(request):
 
 
 from django.shortcuts import redirect
-
+@login_required
 def contact_us(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -119,7 +120,7 @@ def contact_us(request):
     return render(request, 'contact.html')
 
 
-
+@login_required
 def feedback(request):
     if request.method == 'POST':
         # Get data from the form
@@ -155,13 +156,11 @@ def Login(request):
         
         if user is not None:
             login(request, user)
-            return redirect('home')  # Home page url name
+            return redirect('home')  # Replace 'home' with your actual home view name
         else:
-            messages.error(request, "Invalid username or password.")
+            messages.error(request, "Invalid username or password.")  # Error shown when wrong input
     
     return render(request, 'Login.html')
-
-
 
 
 def register_view(request):
@@ -212,7 +211,7 @@ def logout_view(request):
 
 from .models import ServiceRequest
 
-# Main view
+@login_required
 def start(request):
     if request.method == 'POST':
         name = request.POST.get('full_name')
@@ -230,7 +229,7 @@ def start(request):
         price_negotiation = request.POST.get('price_negotiation')
         message = request.POST.get('text_message')
 
-        # Save the data to the database
+        # Save to DB
         new_request = ServiceRequest.objects.create(
             name=name,
             email=email,
@@ -248,7 +247,7 @@ def start(request):
             created_at=timezone.now()
         )
 
-        # Prepare context for PDF
+        # Generate PDF
         context = {
             'name': name,
             'email': email,
@@ -266,7 +265,6 @@ def start(request):
             'message': message
         }
 
-        # Generate and Save PDF
         pdf_file = generate_pdf(context)
         filename = f"{name.replace(' ', '_')}_request.pdf"
 
@@ -277,23 +275,20 @@ def start(request):
         else:
             pdf_url = "PDF generation failed."
 
-        # Create WhatsApp message with PDF link
+        # WhatsApp redirect
         whatsapp_message = (
             f"New Request from {name}%0A"
             f"Email: {email}%0A"
             f"Phone: {phone}%0A"
             f"PDF Link: {pdf_url}"
         )
-
-        whatsapp_number = "918949167574"  # Replace with your number
+        whatsapp_number = "918949167574"
         whatsapp_link = f"https://wa.me/{whatsapp_number}?text={whatsapp_message}"
 
         messages.success(request, "Thank you! Redirecting you to WhatsApp with your request.")
         return HttpResponseRedirect(whatsapp_link)
 
     return render(request, 'Start.html')
-
-
 
 
 
@@ -317,7 +312,7 @@ def generate_pdf(context):
 
 
 from django.utils import timezone
-
+@login_required
 def job_apply(request):
     if request.method == 'POST':
         name = request.POST.get('name')

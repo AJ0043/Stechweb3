@@ -226,6 +226,16 @@
         <img src="{% static 'Images/ST67.png' %}" alt="StechWeb Logo">
       </a>
       <h2>Login to StechWeb</h2>
+      
+      {% if messages %}
+    <div>
+      {% for message in messages %}
+        <div style="background: #ffdddd; color: #a94442; padding: 12px; border-radius: 6px; margin-bottom: 15px; border: 1px solid #ebccd1;">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 
       <form method="POST">
         {% csrf_token %}
