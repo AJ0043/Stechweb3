@@ -1,0 +1,770 @@
+{% extends 'layout/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="vision-banner">
+    <div class="vision-content">
+        <h3>Our Vision</h3>
+        <p>At StechWeb, we envision a digital world where businesses of all sizes can thrive through innovative and scalable web solutions.<br>
+        We are committed to empowering brands with cutting-edge technology and creating future-ready digital experiences.</p>
+        <a href="/job-apply/" class="vision-btn">Join Our Vision</a>
+    </div>
+    <div class="vision-image">
+        <img src="{% static 'Images/JJ.jpg' %}" alt="Our Vision Background">
+    </div>
+</div>
+
+<style>
+.vision-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 90vh;
+    padding: 60px 80px;
+    box-sizing: border-box;
+    background:rgb(255, 255, 255);
+    gap:150px;
+    margin-top:-100px;
+}
+
+.vision-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.vision-content h3 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    color:rgb(234, 121, 34);
+    letter-spacing: 2px;
+}
+
+.vision-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: #555;
+    max-width: 650px;
+}
+
+.vision-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: linear-gradient(135deg,rgb(210, 115, 31) 0%,rgb(229, 118, 21) 100%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius:150px;
+    box-shadow: 0 8px 20px rgba(203, 104, 17, 0.3);
+    transition: all 0.4s ease;
+}
+
+.vision-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(220, 119, 25, 0.4);
+}
+
+.vision-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vision-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+   
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .vision-banner {
+        flex-direction: column-reverse;
+        padding: 40px 20px;
+        gap: 30px;
+        text-align: center;
+    }
+    .vision-content h3 {
+        font-size: 36px;
+    }
+    .vision-content p {
+        font-size: 16px;
+    }
+    .vision-btn {
+        margin-top: 20px;
+    }
+    .vision-image img {
+        max-width: 100%;
+        border-radius: 15px;
+        margin-top:20px;
+    }
+}
+</style>
+
+<div class="Goal">
+    <h1>Our Achievement</h1>
+    <p>At StechWeb, we aim to achieve excellence by delivering outstanding digital solutions that drive success for our clients. Our goal is to continue pushing the boundaries of innovation, ensuring client satisfaction, and fostering a collaborative environment.</p>
+
+    <div class="Post1">
+        <img src="{% static 'Images/EX.png' %}" alt="2+ Year Experience">
+        <h3>2+ Years Experience</h3>
+    </div>
+    <div class="Post2">
+        <img src="{% static 'Images/CCL.png' %}" alt="50+ Clients">
+        <h3>50+ Clients</h3>
+    </div>
+    <div class="Post3">
+        <img src="{% static 'Images/Sta.webp' %}" alt="Best Staff">
+        <h3>Best Staff</h3>
+    </div>
+</div>
+
+<style>
+.Goal {
+    text-align: center;
+    margin:60px 0;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    
+}
+
+.Goal h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.Goal p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.Goal .Post1, .Goal .Post2, .Goal .Post3 {
+    display: inline-block;
+    width: 30%;
+    margin: 20px 1%;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Goal .Post1 img, .Goal .Post2 img, .Goal .Post3 img {
+    width: 50%;
+    height: 80%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.Goal .Post1 h3, .Goal .Post2 h3, .Goal .Post3 h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.Goal .Post1:hover, .Goal .Post2:hover, .Goal .Post3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.Goal .Post1, .Goal .Post2, .Goal .Post3 {
+    padding: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .Goal {
+        padding: 20px;
+    }
+
+    .Goal h1 {
+        font-size: 36px;
+    }
+
+    .Goal .Post1, .Goal .Post2, .Goal .Post3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .Goal .Post1 img, .Goal .Post2 img, .Goal .Post3 img {
+        width: 70%;
+    }
+}
+</style>
+
+
+<div class="topic-container">
+    <div class="topic-content">
+      <h3>🎯 Our Mission</h3>
+      <p>
+        At <strong>StechWeb</strong>, our mission is to deliver innovative and tailored solutions that empower businesses with cutting-edge technologies. We are committed to creating applications that not only meet but exceed client expectations by focusing on <span class="highlight">quality, performance, and user-centric design</span>.
+        <br><br>
+        We specialize in:
+      </p>
+      <ul class="features-list">
+        <li>🚀 Scalable and Robust Custom Solutions</li>
+        <li>🌐 Cloud-Integrated Web and Mobile Applications</li>
+        <li>📈 Data-Driven Insights and Reporting Tools</li>
+        <li>🔐 End-to-End Security with Real-Time Monitoring</li>
+      </ul>
+      <p>
+        With <strong>StechWeb</strong>, your digital transformation journey is in expert hands. We are dedicated to building solutions that are not only future-ready but also adaptable to the evolving needs of your business.
+      </p>
+      <a href="/get-started/" class="read-more-btn">Start Your Project with Us</a>
+    </div>
+  
+    <div class="topic-image">
+      <img src="{% static 'Images/GG.avif' %}" alt="Desktop App Development" class="about-img">
+    </div>
+  </div>
+  
+  <style>
+    .topic-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top:250px;
+    }
+  
+    .topic-content {
+      flex: 1;
+      max-width: 600px;
+      margin-left: 20px;
+    }
+  
+    .topic-content h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+  
+    .topic-content p {
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.8;
+    }
+  
+    .highlight {
+      color: #e67e22;
+      font-weight: bold;
+    }
+  
+    .features-list {
+      margin-top: 15px;
+      list-style-type: none;
+      padding-left: 0;
+    }
+  
+    .features-list li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+  
+    .read-more-btn {
+      margin-top: 20px;
+      position: relative;
+      display: inline-block;
+      padding: 10px 40px;
+      background-color: transparent;
+      color: #888;
+      border: 2px solid orange;
+      text-decoration: none;
+      border-radius: 5px;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.4s ease;
+    }
+  
+    .read-more-btn::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 100%;
+      background-color: orange;
+      z-index: -1;
+      transition: width 0.4s ease;
+    }
+  
+    .read-more-btn:hover {
+      color: white;
+    }
+  
+    .read-more-btn:hover::before {
+      width: 100%;
+    }
+  
+    .topic-image {
+      flex: 1;
+      max-width: 450px;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .topic-image img {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      border-radius: 10px;
+    }
+  
+    /* Tablet View */
+    @media (max-width: 992px) {
+      .topic-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+  
+      .topic-content, .topic-image {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+  
+      .topic-content p, .features-list {
+        text-align: center;
+        padding: 0 20px;
+      }
+  
+      .topic-content h3 {
+        font-size: 2rem;
+      }
+  
+      .features-list li {
+        font-size: 1rem;
+      }
+    }
+  
+    /* Mobile View */
+    @media (max-width: 768px) {
+      .topic-content p {
+        font-size: 1rem;
+      }
+  
+      .topic-content h3 {
+        font-size: 1.8rem;
+      }
+  
+      .read-more-btn {
+        padding: 8px 25px;
+        font-size: 0.95rem;
+      }
+    }
+  
+    /* Small Mobile Devices */
+    @media (max-width: 480px) {
+      .topic-content p {
+        font-size: 0.95rem;
+      }
+  
+      .topic-content h3 {
+        font-size: 1.5rem;
+      }
+  
+      .topic-image img {
+        max-width: 50%;
+        margin-left: 0;
+      }
+    }
+  </style>
+  
+
+
+
+
+  <div class="goal-banner">
+    <h1>Our Goal</h1>
+    <p>At StechWeb, we strive to create innovative solutions that drive business success. Our goals are:</p>
+</div>
+
+<!-- Banner container for cards -->
+<div class="goal-cards-container">
+    <div class="goal-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Innovation for Growth</h3>
+        <p>We aim to drive continuous innovation that empowers businesses to grow and evolve through advanced digital solutions.</p>
+    </div>
+    <div class="goal-card">
+        <i class="fas fa-users"></i>
+        <h3>Focus on Client Success</h3>
+        <p>Our goal is to ensure our clients succeed, providing customized solutions that address their unique business challenges.</p>
+    </div>
+    <div class="goal-card">
+        <i class="fas fa-cogs"></i>
+        <h3>Operational Efficiency</h3>
+        <p>We help businesses optimize their operations by building systems that streamline processes and enhance productivity.</p>
+    </div>
+    <div class="goal-card">
+        <i class="fas fa-bolt"></i>
+        <h3>Fast Turnaround</h3>
+        <p>Delivering high-quality solutions quickly without compromising on quality.</p>
+    </div>
+    <div class="goal-card">
+        <i class="fas fa-lock"></i>
+        <h3>Security First</h3>
+        <p>We prioritize robust security measures to safeguard your data and protect against cyber threats.</p>
+    </div>
+    <div class="goal-card">
+        <i class="fas fa-users-cog"></i>
+        <h3>Expert Team</h3>
+        <p>Our team of experts brings deep technical expertise and experience to every project.</p>
+    </div>
+    <div class="goal-card">
+        <i class="fas fa-cloud"></i>
+        <h3>Cloud Solutions</h3>
+        <p>Helping businesses move to the cloud for better scalability and accessibility.</p>
+    </div>
+</div>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<style>
+    .goal-banner {
+        text-align: center;
+        margin: 50px 0;
+        padding: 30px;
+        background: #fff;
+        border-radius: 15px;
+       
+    }
+
+    .goal-banner h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .goal-banner p {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto 30px;
+    }
+
+    .goal-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .goal-card {
+        width: 30%; /* 3 cards per row */
+        padding: 20px;
+        text-align: center;
+        background:rgba(105, 144, 167, 0.5);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .goal-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .goal-card i {
+        font-size: 3rem;
+        color:rgb(228, 127, 33);
+        margin-bottom: 20px;
+    }
+
+    .goal-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .goal-card p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    /* Tablet View */
+    @media (max-width: 992px) {
+        .goal-card {
+            width: 45%; /* 2 cards per row on tablets */
+        }
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+        .goal-card {
+            width: 90%; /* 1 card per row on mobile */
+        }
+
+        .goal-card i {
+            font-size: 2.5rem;
+        }
+
+        .goal-card h3 {
+            font-size: 1.3rem;
+        }
+
+        .goal-card p {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+
+
+  
+
+
+<div class="goal-banner-container">
+    <div class="goal-banner-image">
+        <img src="{% static 'Images/SSS90.webp' %}" alt="Banner Image">
+    </div>
+
+    <div class="goal-content">
+        <h1>Our Core Values</h1>
+        <p>At StechWeb, our core values are the foundation of everything we do. These values guide our decisions and actions:</p>
+
+        <ul class="values-list">
+            <li><strong class="highlight">Integrity</strong>: We operate with honesty and transparency in everything we do.</li>
+            <li><strong class="highlight">Creativity</strong>: We value innovative thinking and creative solutions to challenges.</li>
+            <li><strong class="highlight">Collaboration</strong>: We believe in the power of teamwork and fostering strong relationships.</li>
+            <li><strong class="highlight">Passion</strong>: We are passionate about what we do and strive to make a positive impact.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<style>
+    .goal-banner-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 15px;
+        margin-top: 100px;
+    }
+
+    .goal-banner-image img {
+        width: 120%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 100px;
+    }
+
+    .goal-content {
+        flex: 1;
+        max-width: 600px;
+        margin-right: 100px; /* Added margin-right for content */
+    }
+
+    .goal-content h1 {
+        font-size: 2.5rem;
+        color:rgb(159, 81, 81);
+        margin-bottom: 20px;
+    }
+
+    .goal-content p {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .values-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .values-list li {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #ff5f6d; /* Highlight color */
+    }
+
+    /* Tablet View */
+    @media (max-width: 992px) {
+        .goal-banner-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .goal-banner-image img {
+            max-width: 80%;
+        }
+
+        .goal-content {
+            max-width: 100%;
+            margin-right: 0; /* Remove right margin for smaller screens */
+        }
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+        .goal-content h1 {
+            font-size: 2rem;
+        }
+
+        .goal-content p {
+            font-size: 1rem;
+        }
+
+        .values-list li {
+            font-size: 1rem;
+        }
+
+        .goal-banner-container {
+            padding: 10px; /* Reduce padding for mobile */
+        }
+
+        .goal-banner-image img {
+            max-width: 90%; /* Adjust image size for mobile */
+            margin-left: 0;
+        }
+
+        .goal-content {
+            margin-right: 0; /* Ensure no margin on the right side */
+        }
+    }
+</style>
+
+<div class="career-banner-container">
+    <div class="career-banner-content">
+        <img src="{% static 'Images/job.jpg' %}" alt="Banner Image">
+        <h1>Grow Your Career with Us</h1>
+        <p>At StechWeb, we offer a dynamic work environment where innovation meets opportunity. Join our team to expand your skills, make an impact, and build a bright future.</p>
+        <a href="{% url 'job-apply' %}">
+            <button class="career-btn">Explore Careers & Jobs</button>
+          </a>
+          
+    </div>
+</div>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<style>
+    .career-banner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        border-radius: 10px;
+        color: white;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .career-banner-content {
+        max-width: 800px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .career-banner-content img {
+        width: 80%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .career-banner-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: rgb(217, 129, 46);
+    }
+
+    .career-banner-content p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: #888;
+    }
+
+    .career-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .career-btn:hover {
+        background-color: #ff5f6d;
+    }
+
+    /* Tablet View */
+    @media (max-width: 992px) {
+        .career-banner-container {
+            padding: 30px;
+        }
+
+        .career-banner-content h1 {
+            font-size: 2rem;
+        }
+
+        .career-banner-content p {
+            font-size: 1rem;
+        }
+
+        .career-btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+        .career-banner-container {
+            padding: 20px;
+        }
+
+        .career-banner-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .career-banner-content p {
+            font-size: 1rem;
+        }
+
+        .career-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+    }
+</style>
+
+{% include 'Inc/Footer.html' %}
+{% endblock content %}

@@ -1,0 +1,969 @@
+{% extends 'layout/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="aboutus-section">
+    <div class="image-container">
+      <img src="{% static 'Images/Wee.jpg' %}" alt="About Us Image" class="about-img">
+      <div class="overlay-text">
+        <h2>Web redesign</h2>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .aboutus-section {
+      background-color: #fff;
+      font-family: 'Roboto', sans-serif;
+    }
+  
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+      margin-top: -90px;
+  
+  
+    }
+  
+    .about-img {
+      width: 100%;
+      height: 90%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(40%);
+      margin-top: -45px;
+     
+    }
+  
+    .overlay-text {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 86%;
+      background-color: rgba(58, 70, 78, 0.6);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+  
+    .overlay-text h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-family:Arial;
+    }
+  
+    .overlay-text p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin: 0;
+      max-width: 800px;
+    }
+  
+    /* Responsive design */
+    @media (max-width: 1024px) {
+      .image-container {
+        height: 500px;
+      }
+  
+      .overlay-text h2 {
+        font-size: 2.5rem;
+      }
+  
+      .overlay-text p {
+        font-size: 1.1rem;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .image-container {
+        height: 450px;
+      }
+  
+      .overlay-text h2 {
+        font-size: 2rem;
+      }
+  
+      .overlay-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .image-container {
+        height: 380px;
+      }
+  
+      .overlay-text h2 {
+        font-size: 1.6rem;
+      }
+  
+      .overlay-text p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+  
+
+<!--Web devlopment Define-->
+<div class="Topic">
+    <div class="topic-container">
+      <div class="topic-content">
+        <h3>🎨 🌐 Web Redesigning</h3>
+        <p>
+          Give your website a modern makeover with <strong>StechWeb's</strong> 
+          <span class="highlight">professional web redesigning services</span>.
+          <br><br>
+          Whether your site looks outdated or isn't performing as expected, our redesign services ensure a fresh look, better functionality, and improved user experience. We help you stay ahead in the digital world by offering:
+        </p>
+        <ul class="features-list">
+          <li>🎯 Modern & Responsive Design</li>
+          <li>⚡ Faster Loading Speed Optimization</li>
+          <li>🔍 SEO-Friendly Structure</li>
+          <li>🧩 Improved Navigation & User Experience (UX)</li>
+          <li>📱 Mobile and Tablet Optimization</li>
+          <li>🛡️ Enhanced Security Features</li>
+          <li>🛒 E-commerce Redesign (if applicable)</li>
+          <li>📈 Conversion Rate Optimization (CRO)</li>
+        </ul>
+        <p>
+          With <strong>StechWeb</strong>, your website won't just look beautiful — it will deliver better performance, more engagement, and stronger results.
+        </p>
+        <a href="/Contact/" class="read-more-btn">Redesign My Website</a>
+      </div>
+  
+      <div class="topic-image">
+        <img src="{% static 'Images/we00.png' %}" alt="Website Redesigning" class="about-img">
+      </div>
+    </div>
+  </div>
+  
+    
+  <style>
+  .Topic {
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .topic-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .topic-content {
+    flex: 1 1 50%;
+    margin-left: 200px;
+  }
+  
+  .topic-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .topic-content p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 600px;
+  }
+  
+  .highlight {
+    color: #e67e22;
+    font-weight: bold;
+  }
+  
+  .features-list {
+    margin-top: 15px;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .features-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  .read-more-btn {
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: transparent;
+    color: #888;
+    border: 2px solid orange;
+    text-decoration: none;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.4s ease;
+  }
+  
+  .read-more-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: orange;
+    z-index: -1;
+    transition: width 0.4s ease;
+  }
+  
+  .read-more-btn:hover {
+    color: white;
+  }
+  
+  .read-more-btn:hover::before {
+    width: 100%;
+  }
+  
+  .topic-image {
+    flex: 1 1 30%;
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  .topic-image img {
+    max-width: 450px; /* Chhoti aur neat image */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left:-200px;
+  }
+  
+  /* Tablet View */
+  @media (max-width: 992px) {
+    .topic-container {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+  
+    .topic-content, .topic-image {
+      flex: 1 1 100%;
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .topic-content p, .features-list {
+      text-align: center;
+      padding: 0 20px;
+    }
+  
+    .topic-content h3 {
+      font-size: 2rem;
+    }
+  
+    .features-list li {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .topic-content p {
+      font-size: 1rem;
+    }
+  
+    .topic-content h3 {
+      font-size: 1.8rem;
+    }
+  
+    .read-more-btn {
+      padding: 8px 25px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Small Mobile Devices */
+  @media (max-width: 480px) {
+    .topic-content p {
+      font-size: 0.95rem;
+    }
+  
+    .topic-content h3 {
+      font-size: 1.5rem;
+    }
+    .topic-image img {
+      margin-left:-10px;  
+      
+
+    }
+
+}
+  </style>
+  
+  <div class="Price-list">
+    <h2 class="price-heading">🎨🌐 Web Redesigning Pricing</h2>
+    <p class="price-subheading">
+      Transform your online presence with our customized web redesign packages designed to fit every business need.
+    </p>
+  
+    <div class="price-cards">
+  
+      <div class="price-card">
+        <h3>Basic Redesign</h3>
+        <p class="price">₹12,000 - ₹20,000</p>
+        <ul class="price-features">
+          <li>✅ Modern Template-Based Design</li>
+          <li>✅ Responsive Across Devices</li>
+          <li>✅ Basic UI/UX Improvements</li>
+          <li>✅ Speed Optimization</li>
+          <li>✅ Basic SEO Setup</li>
+          <li>✅ 1 Month Free Support</li>
+        </ul>
+        <a href="/get-started/" class="contact-btn">Get Started</a>
+      </div>
+  
+      <div class="price-card">
+        <h3>Standard Redesign</h3>
+        <p class="price">₹25,000 - ₹40,000</p>
+        <ul class="price-features">
+          <li>✅ Custom Design Layout</li>
+          <li>✅ Improved Navigation & User Flow</li>
+          <li>✅ Speed + SEO Optimization</li>
+          <li>✅ CMS (WordPress/Admin Panel) Integration</li>
+          <li>✅ Mobile-First Design Approach</li>
+          <li>✅ 3 Months Free Support & Maintenance</li>
+        </ul>
+        <a href="/get-started/" class="contact-btn">Get Started</a>
+      </div>
+  
+      <div class="price-card">
+        <h3>Premium Redesign</h3>
+        <p class="price">₹50,000+</p>
+        <ul class="price-features">
+          <li>✅ Full Custom Redesign (UI/UX Strategy)</li>
+          <li>✅ E-commerce / Advanced Functionalities</li>
+          <li>✅ Core Web Vitals Optimization</li>
+          <li>✅ Marketing Funnel Optimization (Leads/Sales Focused)</li>
+          <li>✅ Complete SEO Audit and Re-implementation</li>
+          <li>✅ 6 Months Free Priority Support</li>
+        </ul>
+        <a href="/get-started/" class="contact-btn">Get Started</a>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+  <style>
+  .Price-list {
+    padding: 50px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin-top:100px;
+  }
+  
+  .price-heading {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+    font-family:Times , New , Roman;
+  }
+  
+  .price-subheading {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  .price-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .price-card {
+    background: #fff;
+    border: 2px solid #ffa500;
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  .price-card h3 {
+    font-size: 1.8rem;
+    color: #e67e22;
+    margin-bottom: 15px;
+  }
+  
+  .price {
+    font-size: 1.6rem;
+    color: #444;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .price-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .price-features li {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  
+  .contact-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 2px solid #e67e22;
+    color: #e67e22;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  
+  .contact-btn:hover {
+    background-color: #e67e22;
+    color: white;
+  }
+  
+  /* Responsive for Tablets */
+  @media (max-width: 992px) {
+    .price-cards {
+      gap: 20px;
+    }
+  
+    .price-card {
+      width: 280px;
+    }
+  }
+  
+  /* Responsive for Mobiles */
+  @media (max-width: 768px) {
+    .price-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .price-card {
+      width: 90%;
+    }
+  
+    .price-heading {
+      font-size: 2rem;
+    }
+  
+    .price-subheading {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* Small Mobiles */
+  @media (max-width: 480px) {
+    .price-heading {
+      font-size: 1.8rem;
+    }
+  
+    .price-subheading {
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+  
+    .price-card {
+      padding: 20px 15px;
+    }
+  
+    .price-card h3 {
+      font-size: 1.5rem;
+    }
+  
+    .price {
+      font-size: 1.4rem;
+    }
+  }
+  </style>
+  
+
+
+  <style>
+
+    /* Benefits Section */
+    .benefits-section {
+      background-color: #1212;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top:100px;
+    }
+
+    .benefits-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #black;
+      font-family:Times,New,Roamn;
+    }
+
+    .benefits-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .benefit-card {
+      background: #1212;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px 60px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateX(8px);
+      background:rgba(48, 202, 189, 0.1);
+      transition:0.5s ease;
+    }
+
+    .benefit-card i {
+      font-size: 50px;
+      margin-bottom: 20px;
+      color: #ff6f00;
+    }
+
+    .benefit-card h4 {
+      font-size: 22px;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .benefit-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .Topic2 {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .Topic2 .content2 {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .Topic2 .image {
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .Topic2 img {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .Topic2 {
+        padding: 20px 10px;
+      }
+
+      .Topic2 h3 {
+        font-size: 24px;
+      }
+
+      .Topic2 p {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+
+      .Topic2 img {
+        width: 100%;
+      }
+
+      .benefits-container {
+        flex-direction: column;
+        gap: 20px;
+        margin-left:10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Benefits Section -->
+  <div class="benefits-section">
+    <h2>Why Choose Stechweb?</h2>
+    <p>We offer the best digital solutions to help your business succeed. Here are just a few benefits of working with us:</p>
+
+    <div class="benefits-container">
+      <div class="benefit-card">
+        <i class="fas fa-cogs"></i>
+        <h4>Customized Solutions</h4>
+        <p>We offer tailor-made solutions to meet your unique needs and ensure maximum success.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="fas fa-rocket"></i>
+        <h4>Scalable Growth</h4>
+        <p>Our solutions are designed to grow with your business, adapting to your ever-changing needs.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="fas fa-users"></i>
+        <h4>Customer-Centric</h4>
+        <p>We focus on creating meaningful experiences for your customers, boosting engagement and loyalty.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="fas fa-chart-line"></i>
+        <h4>Data-Driven Results</h4>
+        <p>We use data and analytics to make informed decisions, ensuring better performance and ROI.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="fas fa-clock"></i>
+        <h4>Timely Delivery</h4>
+        <p>We guarantee the timely delivery of high-quality projects, meeting deadlines and expectations.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Security & Reliability</h4>
+        <p>Your business data and security are our top priority. We ensure maximum reliability in our solutions.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="Question">
+    <h2 class="question-heading">🛠️ Frequently Asked Questions - Web Maintenance</h2>
+    <p class="question-subheading">
+      Find answers to the most common queries clients have about website maintenance services.
+    </p>
+  
+    <div class="faq-container">
+  
+      <div class="faq-item">
+        <div class="faq-question">🔄 What is included in website maintenance?</div>
+        <div class="faq-answer">
+          Website maintenance includes regular backups, software/plugin updates, security checks, bug fixes, content updates, speed optimization, and overall performance monitoring to keep your website running smoothly.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">🕒 How often should my website be maintained?</div>
+        <div class="faq-answer">
+          Ideally, your website should be maintained on a weekly or monthly basis to ensure updates are applied, vulnerabilities are patched, and performance remains optimal across all devices and browsers.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">🔒 How do you ensure my website stays secure?</div>
+        <div class="faq-answer">
+          We install SSL certificates, perform regular security audits, update all software and plugins, monitor for suspicious activity, and implement strong firewalls and malware protection tools.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">📈 Does regular maintenance help improve SEO?</div>
+        <div class="faq-answer">
+          Yes! A well-maintained website loads faster, stays bug-free, and remains mobile-friendly — all of which are crucial ranking factors for SEO.
+          <br><br>
+          Regular updates also ensure search engines can crawl your site effectively, improving visibility and rankings.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">🚀 Will maintenance improve my website's speed?</div>
+        <div class="faq-answer">
+          Absolutely. We optimize images, update coding standards, fix broken links, and manage caching — all of which boost your site's loading speed and enhance user experience.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">💬 Can I request content or design changes during maintenance?</div>
+        <div class="faq-answer">
+          Yes! Most maintenance plans include a set number of content updates like blog posts, image changes, or banner updates.
+          <br><br>
+          Major design changes can also be accommodated under custom maintenance packages.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">🔧 What happens if something breaks on my website?</div>
+        <div class="faq-answer">
+          If any functionality breaks or an error occurs, our maintenance team will prioritize the issue and provide quick fixes or rollback options to restore your website without downtime.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">📅 Can you maintain websites built by other developers?</div>
+        <div class="faq-answer">
+          Yes! Whether we built your website or not, we can take over its maintenance after performing a full audit to understand the existing setup, technologies used, and improvements needed.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">💲 How much does web maintenance cost?</div>
+        <div class="faq-answer">
+          Web maintenance plans usually start at ₹3,000/month for basic services like updates and backups.
+          <br><br>
+          For advanced security monitoring, content management, and SEO services, pricing will vary depending on your website size and needs.
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <div class="faq-question">🎯 Why is regular website maintenance important?</div>
+        <div class="faq-answer">
+          Regular maintenance ensures your website stays secure, performs efficiently, remains user-friendly, supports SEO efforts, and avoids costly downtimes or data losses — helping you maintain your brand's reputation online.
+        </div>
+      </div>
+  
+    </div>
+  </div>
+    
+  <style>
+  .Question {
+    padding: 50px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  .question-heading {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+    font-family:Serif;
+  }
+  
+  .question-subheading {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .faq-item {
+    background: #f9f9f9;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    border-left: 5px solid orange;
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+  
+  .faq-question {
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: #fff;
+    color: #333;
+    position: relative;
+  }
+  
+  .faq-answer {
+    display: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #555;
+    background: #f9f9f9;
+    line-height: 1.6;
+  }
+  
+  /* Open/Close Animation */
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+  
+  /* Tablet View */
+  @media (max-width: 992px) {
+    .question-heading {
+      font-size: 2.2rem;
+    }
+    .question-subheading {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .faq-question {
+      font-size: 1.1rem;
+    }
+    .faq-answer {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Small Mobile Devices */
+  @media (max-width: 480px) {
+    .question-heading {
+      font-size: 2rem;
+    }
+    .faq-question {
+      font-size: 1rem;
+    }
+  }
+  </style>
+  
+  <script>
+  // Toggle FAQ answers
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+        }
+      });
+    });
+  });
+  </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'Inc/Footer.html' %}  
+{% endblock content %}

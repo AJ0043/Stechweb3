@@ -1,0 +1,271 @@
+{% extends 'layout/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="our-team-banner">
+  <div class="team-banner-content">
+    <h1>Meet the minds behind Stechweb</h1>
+  </div>
+</div>
+
+<style>
+.our-team-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(143, 169, 66, 0.4)), url('{% static "images/Tea.jpg" %}') no-repeat center center/cover;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  margin-top:-90px;
+}
+
+.team-banner-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color:rgb(61, 85, 174);
+  font-weight:bold;
+
+}
+
+.team-banner-content p {
+  font-size: 20px;
+  color:rgb(61, 73, 203);
+}
+
+@media (max-width: 768px) {
+  .our-team-banner {
+    height: 50vh;
+    padding: 0 20px;
+  }
+
+  .team-banner-content h1 {
+    font-size: 32px;
+  }
+
+  .team-banner-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-team-banner {
+    height: 40vh;
+  }
+
+  .team-banner-content h1 {
+    font-size: 28px;
+  }
+
+  .team-banner-content p {
+    font-size: 14px;
+  }
+}
+</style>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Team - Stechweb</title>
+  <style>
+    #team-section * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #team-section {
+      background: #fff;
+      padding: 60px 20px;
+    }
+
+    #team-section .team-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    #team-section .team-header h3 {
+      font-size: 32px;
+      color: #666;
+      font-family: 'Times New Roman', Times, serif;
+      margin-bottom: 10px;
+    }
+
+    #team-section .team-header p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    #team-section .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    #team-section .team-member {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      max-width: 350px;
+      width: 100%;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    #team-section .team-member:hover {
+      transform: translateY(-8px);
+    }
+
+    #team-section .member-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    #team-section .member-name {
+      font-size: 20px;
+      color: #222;
+      margin-bottom: 5px;
+    }
+
+    #team-section .member-role {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    #team-section .member-socials {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #team-section .member-socials img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    #team-section .member-socials a:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Responsive Design for Tablets */
+    @media (max-width: 992px) {
+      #team-section .team-member {
+        width: 45%; /* Two items per row on tablets */
+      }
+
+      #team-section .team-header h3 {
+        font-size: 26px;
+      }
+    }
+
+    /* Responsive Design for Mobile */
+    @media (max-width: 768px) {
+      #team-section .team-member {
+        width: 90%; /* One item per row on mobile */
+      }
+
+      #team-section .team-header h3 {
+        font-size: 22px;
+      }
+
+      #team-section .team-header p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="team-section">
+    <div class="team-header">
+      <h3>Our Trusted Team</h3>
+      <p>Meet the minds behind Stechweb — passionate and professional individuals bringing your ideas to life.</p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Member 1 -->
+      <div class="team-member">
+        <img class="member-image" src="{% static 'images/LOKK.jpg' %}" alt="Lokesh Jain">
+        <h4 class="member-name">Lokesh Jain</h4>
+        <p class="member-role"> Proprietor </p>
+        <div class="member-socials">
+          <a href="https://facebook.com/lokeshjain" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+          <a href="https://instagram.com/lokeshjain" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
+          <a href="https://linkedin.com/in/lokeshjain" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+          <a href="https://wa.me/919694140058" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-member">
+        <img class="member-image" src="{% static 'images/Anshu23.png' %}" alt="Anvesh Jain">
+        <h4 class="member-name">Anvesh Jain</h4>
+        <p class="member-role">Python Django Developer</p>
+        <div class="member-socials">
+            <a href="https://www.facebook.com/profile.php?id=100089802446408" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/anvesh-jain-22875b264/" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+            <a href="https://wa.me/918949167574" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
+          </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-member">
+        <img class="member-image" src="{% static 'images/GA.jpeg' %}" alt="Garvish Jain">
+        <h4 class="member-name">Garvish Jain</h4>
+        <p class="member-role">Node.js Developer</p>
+        <div class="member-socials">
+            <a href="https://www.facebook.com/garvish.jain" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+            <a href="https://www.instagram.com/garvish.jain/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADHP9WcB_Uqt6j-zy3M9QdTXNSHrrKksQFY&keywords=garvish%20jain&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=b7759f93-5111-4b84-a916-912ef3d77534&sid=%2Clk&spellCorrectionEnabled=true" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+            <a href="https://wa.me/918305104770" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
+          </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-member">
+        <img class="member-image" src="{% static 'images/GO.jpeg' %}" alt="Rahul Mohar">
+        <h4 class="member-name">Govind Gupta</h4>
+        <p class="member-role">Project Tester </p>
+        <div class="member-socials">
+            <a href="https://www.facebook.com/profile.php?id=100009213734159" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+            <a href="https://www.instagram.com/govind_alapuriya/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAC4v7L4BsA1w5ORErp24xBXNcJ_i1uEvmgE&keywords=govind%20alapuriya&origin=RICH_QUERY_SUGGESTION&position=0&searchId=d19580fe-e7ca-416e-8685-94872fb6fd96&sid=eaN&spellCorrectionEnabled=false" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+            <a href="https://wa.me/918440856480" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
+          </div>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="team-member">
+        <img class="member-image" src="{% static 'images/RA.jpeg' %}" alt="Rahul Mohar">
+        <h4 class="member-name">Rahul Mohar</h4>
+        <p class="member-role">Consultant</p>
+        <div class="member-socials">
+          <a href="" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+          <a href="https://instagram.com/lokeshjain" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
+          <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADld7v4BORwKA434WKVMK86Njm-GS1wUVe0&keywords=rahul%20kumar%20mahor&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=96c3bc81-2f38-432b-bfa4-35ea166aa2fe&sid=.B%3B&spellCorrectionEnabled=true" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+          <a href="https://wa.me/918650352670" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>{% include 'Inc/Footer.html' %}
+{% endblock content %}

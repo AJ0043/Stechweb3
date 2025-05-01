@@ -1,0 +1,119 @@
+{% extends "layout/main.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Banner -->
+<div class="jobs-banner">
+  <div class="jobs-banner__overlay">
+    <h1>Career Opportunities</h1>
+    <p>Join StechWeb and help us shape the future of web innovation. Browse our open positions below.</p>
+  </div>
+</div>
+
+<!-- Jobs Listing -->
+<section class="jobs-list">
+  <div class="container">
+    {% if jobs %}
+      <div class="job-grid">
+        {% for job in jobs %}
+          <div class="job-card">
+            <h3>{{ job.title }}</h3>
+            {% if job.location %}<p><strong>Location:</strong> {{ job.location }}</p>{% endif %}
+            {% if job.salary %}<p><strong>Salary:</strong> {{ job.salary }}</p>{% endif %}
+            <p class="job-desc">{{ job.description|truncatewords:30 }}</p>
+            <a href="/job-apply/" class="apply-btn">Apply Now</a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="no-jobs">No job openings at the moment. Check back soon!</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+/* Banner */
+.jobs-banner {
+  position: relative;
+  background: url("{% static 'Images/Car.png' %}") no-repeat center/cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -85px;
+}
+.jobs-banner__overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  color: #fff;
+}
+.jobs-banner__overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.jobs-banner__overlay p {
+  font-size: 1.1rem;
+}
+
+/* Jobs List */
+.jobs-list {
+  padding: 60px 20px;
+ 
+}
+.container { max-width: 1200px; margin: 0 auto; }
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+.job-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+.job-card:hover {
+  transform: translateY(-6px);
+}
+.job-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.job-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+.job-desc { margin-bottom: 20px; }
+.apply-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #05afa1;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.apply-btn:hover {
+  background: #037d74;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .jobs-banner { height: 250px; }
+  .jobs-banner__overlay h1 { font-size: 2rem; }
+  .jobs-banner__overlay p { font-size: 1rem; }
+}
+@media (max-width: 768px) {
+  .jobs-banner { height: 200px; }
+  .container { padding: 0 15px; }
+  .job-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+{% include 'Inc/Footer.html' %}
+{% endblock %}

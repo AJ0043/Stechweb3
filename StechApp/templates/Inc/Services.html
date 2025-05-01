@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services - Stechweb</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .services-section {
+      text-align: center;
+      padding: 80px 20px;
+      background: #f9f9f9;
+      margin-top:200px;
+    }
+
+    .services-section h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-family:Times,New,Roman;
+      color: #333;
+    }
+
+    .services-section p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the cards */
+        gap: 50px; /* Added gap for equal distance between cards */
+        max-width: 1400px; /* Maximum width of container */
+        margin: 0 auto; /* Centering the entire container */
+      }
+
+      .service-card {
+        background: #12121; /* Fixed background color */
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        padding: 50px;
+        width: 100%; /* Changed from 150% to 100% for better responsiveness */
+        max-width: 340px;
+        text-align: center;
+        transition: transform 0.3s ease, background 0.5s ease, color 0.5s ease;
+        margin-bottom: 30px;
+      }
+      
+      .service-card:hover {
+        transform: translateX(-10px);
+        background: rgba(52, 101, 143, 0.3); /* Added missing semicolon */
+        color: White;
+        
+      }
+      
+      .service-card:hover i , p{
+       color:White; 
+
+      }
+
+
+    .service-card i {
+      font-size: 50px;
+      margin-bottom: 20px;
+      color: #ff6f00;
+    }
+
+    .service-card h4 {
+      font-size: 22px;
+      color: Orange;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .read-more-btn {
+      background-color: #ff6f00;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .read-more-btn:hover {
+      background-color:White;
+      color:Orange;
+      transition:0.5s ease;
+    }
+
+    @media (max-width: 768px) {
+      .service-card {
+        width: 100%;
+        padding: 20px; /* Padding for smaller screens */
+      }
+
+      .services-section h3 {
+        font-size: 28px;
+      }
+
+      .services-container {
+        justify-content: center; /* Center the cards on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="services-section">
+    <h3>Our Services</h3>
+    <p>We offer a variety of services to help you grow your business and succeed online.</p>
+
+    <div class="services-container">
+      <div class="service-card">
+        <i class="fas fa-laptop-code"></i>
+        <h4>Web Development</h4>
+        <p>We create responsive, user-friendly websites to help businesses thrive in the digital space. Our custom-built websites offer scalable and modern designs.</p>
+        <a href="/Webdevelopment/" class="read-more-btn">Read More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h4>App Development</h4>
+        <p>Our expert developers build high-performance mobile apps to bring your ideas to life on both iOS and Android platforms with a seamless experience.</p>
+        <a href="/Appdevelopment/" class="read-more-btn">Read More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-desktop"></i>
+        <h4>Desktop Applications</h4>
+        <p>We specialize in creating powerful desktop applications tailored to your business needs, ensuring efficiency and improved workflow on your system.</p>
+        <a href="/Desktop/" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="services-container">
+      <div class="service-card">
+        <i class="fas fa-share-alt"></i>
+        <h4>Social Media</h4>
+        <p>We help you build a strong online presence by creating engaging social media strategies to connect with your audience and boost brand recognition.</p>
+        <a href="#" class="read-more-btn">Read More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-tools"></i>
+        <h4>Web Maintenance</h4>
+        <p>We provide ongoing web maintenance services to keep your website running smoothly, up-to-date, and free from bugs and security vulnerabilities.</p>
+        <a href="/WebMaintence/" class="read-more-btn">Read More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-chart-line"></i>
+        <h4>SEO & Digital Marketing</h4>
+        <p>Our SEO and digital marketing strategies help your website rank higher on search engines and reach the right audience, leading to increased traffic and conversions.</p>
+        <a href="/SEO%20Services/" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

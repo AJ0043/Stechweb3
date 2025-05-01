@@ -1,0 +1,166 @@
+{% extends 'layout/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="project-banner">
+  <div class="overlay">
+    <h1>Our Projects</h1>
+    <p>Discover how StechWeb turns ideas into reality through passion and expertise.</p>
+  </div>
+</div>
+
+<section class="project-list">
+  <div class="container">
+    {% if projects %}
+      <div class="project-grid">
+        {% for project in projects %}
+          <div class="project-card">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description|truncatewords:25 }}</p>
+            {% if project.link %}
+              <a href="{{ project.link }}" target="_blank" class="project-link">Click here</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="no-projects">No projects to show at the moment.</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  /* Banner */
+  .project-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url("{% static 'images/Hosttt.jpg' %}") no-repeat center/cover;
+    margin-top: -83px;
+  }
+  .project-banner .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .project-banner h1 {
+    color: #fff;
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  .project-banner p {
+    color: #eee;
+    font-size: 18px;
+    max-width: 800px;
+  }
+
+  /* Projects grid */
+  .project-list {
+    padding: 40px 20px;
+   
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .project-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .project-card {
+    background:rgb(232, 232, 232);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-8px);
+  }
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .project-card h3 {
+    font-size: 1.4rem;
+    margin: 15px 0 10px;
+    color: #333;
+  }
+  .project-card p {
+    font-size: 1rem;
+    color: blackn;
+    padding: 0 15px 20px;
+    
+  }
+  .project-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 20px;
+    background: #05afa1;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .project-link:hover {
+    background: #037d74;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .project-banner {
+      height: 300px;
+    }
+    .project-banner h1 {
+      font-size: 36px;
+    }
+    .project-banner p {
+      font-size: 16px;
+      max-width: 600px;
+    }
+    .project-card img {
+      height: 180px;
+    }
+  }
+  @media (max-width: 768px) {
+    .project-banner {
+      height: 250px;
+    }
+    .project-banner h1 {
+      font-size: 28px;
+    }
+    .project-banner p {
+      font-size: 14px;
+      max-width: 100%;
+    }
+    .project-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .project-card img {
+      height: 100px;
+    }
+    .project-card h3 {
+      font-size: 1rem;
+    }
+    .project-card p {
+      font-size: 0.6rem;
+    }
+  }
+</style>
+
+{% include 'Inc/Footer.html' %}
+{% endblock content %}

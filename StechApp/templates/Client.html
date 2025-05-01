@@ -1,0 +1,146 @@
+{% extends "layout/main.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Banner -->
+<div class="clients-banner">
+  <div class="clients-banner__overlay">
+    <h1>Our Valued Clients</h1>
+    <p>We’re proud to partner with businesses around the globe. See who trusts StechWeb to bring their digital visions to life.</p>
+  </div>
+</div>
+
+<!-- Clients Section -->
+<section class="our-clients">
+  <div class="container">
+    <h2>Our Clients</h2>
+    <div class="client-grid">
+      {% for client in clients %}
+        <div class="client-card">
+          <img src="{{ client.image.url }}" alt="{{ client.name }}">
+          <h3>{{ client.name }}</h3>
+        </div>
+      {% empty %}
+        <p class="no-clients">No clients to show at the moment.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Styling -->
+<style>
+/* Banner */
+.clients-banner {
+  position: relative;
+  background: url("{% static 'images/CCC.jpg' %}") no-repeat center/cover;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -85px;
+}
+.clients-banner__overlay {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 12px;
+  color: #fff;
+  max-width: 700px;
+}
+.clients-banner__overlay h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.clients-banner__overlay p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Clients Section */
+.our-clients {
+  padding: 80px 20px;
+  background: #fff;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.our-clients h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+  color: #222;
+  font-weight: 600;
+}
+.client-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Client Card */
+.client-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.client-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.client-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #e0e0e0;
+}
+.client-card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* No Clients Message */
+.no-clients {
+  text-align: center;
+  color: #777;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .clients-banner {
+    height: 300px;
+  }
+  .clients-banner__overlay h1 {
+    font-size: 2.2rem;
+  }
+  .clients-banner__overlay p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .clients-banner {
+    height: 220px;
+  }
+  .clients-banner__overlay {
+    padding: 20px;
+  }
+  .client-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+{% include 'Inc/Footer.html' %}
+
+{% endblock %}

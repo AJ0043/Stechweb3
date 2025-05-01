@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .feedback-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 50px auto;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .feedback-left {
+      flex: 1.2;
+      position: relative;
+      min-height: 500px;
+    }
+
+    .feedback-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .image-overlay div {
+      font-size: 18px;
+    }
+
+    .image-overlay i {
+      margin-right: 10px;
+      color: #04c7b0;
+      font-size: 20px;
+    }
+
+    .feedback-right {
+      flex: 1;
+      background: #fff;
+      padding: 40px 30px;
+    }
+
+    .feedback-right h2 {
+      margin-bottom: 10px;
+      font-size: 26px;
+      color: #333;
+    }
+
+    .feedback-right p {
+      margin-bottom: 25px;
+      color: #666;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #04c7b0;
+      outline: none;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #05afa1, #04c7b0);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(135deg, #037d74, #039e8c);
+    }
+
+    .alert {
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .alert-success { background: #d4edda; color: #155724; }
+    .alert-error   { background: #f8d7da; color: #721c24; }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .feedback-container {
+        flex-direction: column;
+      }
+
+      .feedback-left,
+      .feedback-right {
+        flex: 1 1 100%;
+      }
+
+      .feedback-left {
+        min-height: 300px;
+      }
+
+      .image-overlay div {
+        font-size: 16px;
+      }
+
+      .image-overlay i {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="feedback-container">
+  <!-- Left Side Image with Full Overlay -->
+  <div class="feedback-left">
+    <img src="{% static 'images/Image.jpeg' %}" alt="Feedback Image">
+    <div class="image-overlay">
+      <div><i class="fas fa-envelope"></i> Techstech506@gmail.com</div>
+      <div><i class="fas fa-phone-alt"></i> +91 949167574</div>
+      <div><i class="fas fa-map-marker-alt"></i> City Center, Gwalior</div>
+    </div>
+  </div>
+
+  <!-- Right Side Form -->
+  <div class="feedback-right">
+    <h2>We Value Your Feedback</h2>
+    <p>Please share your thoughts with us. Your feedback helps us improve.</p>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_name">Name</label>
+        <input type="text" name="name" required maxlength="100" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <label for="id_email">Email</label>
+        <input type="email" name="email" required maxlength="100" placeholder="Enter your email">
+      </div>
+
+      <div class="form-group">
+        <label for="id_rating">Rating</label>
+        <select name="rating" required>
+          <option value="">Select rating...</option>
+          <option value="1">1 - Poor</option>
+          <option value="2">2 - Fair</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="id_feedback">Feedback</label>
+        <textarea name="feedback" required rows="5" maxlength="1500" placeholder="Write your feedback..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="id_image">Upload Image (optional)</label>
+        <input type="file" name="image">
+      </div>
+
+      <button type="submit" class="btn-submit">Submit Feedback</button>
+    </form>
+  </div>
+</section>
+
+</body>
+</html>

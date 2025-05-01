@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    .Content {
+      padding: 20px;
+      margin-top: 80px;
+    }
+
+    .Charts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .Charts a {
+      text-decoration: none;
+      font-size: 15px;
+      color: #333;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ff6f00;
+      border-radius: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: relative;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      background-color: #1212;
+      transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+      overflow-wrap: break-word;
+    }
+
+    .Charts a:before,
+    .Charts a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 35px solid transparent;
+      border-right: 35px solid transparent;
+    }
+
+    .Charts a:before {
+      top: -20px;
+      border-bottom: 20px solid #ff6f00;
+    }
+
+    .Charts a:after {
+      bottom: -20px;
+      border-top: 20px solid #ff6f00;
+    }
+
+    .Charts a:hover {
+      background-color: #ff6f00;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .Charts a i {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    /* Tablet (2 per row) */
+    @media screen and (max-width: 1024px) {
+      .Charts a {
+        width: 130px;
+        height: 130px;
+        font-size: 14px;
+      }
+
+      .Charts a i {
+        font-size: 24px;
+      }
+
+      .Charts a:before,
+      .Charts a:after {
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+      }
+
+      .Charts a:before {
+        top: -15px;
+        border-bottom: 15px solid #ff6f00;
+      }
+
+      .Charts a:after {
+        bottom: -15px;
+        border-top: 15px solid #ff6f00;
+      }
+    }
+
+    /* Mobile (1 per row) */
+    @media screen and (max-width: 600px) {
+      .Charts {
+        gap: 20px;
+      }
+
+      .Charts a {
+        width: 100%;
+        max-width: 300px;
+        height: 120px;
+        font-size: 13px;
+      }
+
+      .Charts a i {
+        font-size: 22px;
+      }
+
+      .Charts a:before,
+      .Charts a:after {
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+      }
+
+      .Charts a:before {
+        top: -12px;
+        border-bottom: 12px solid #ff6f00;
+      }
+
+      .Charts a:after {
+        bottom: -12px;
+        border-top: 12px solid #ff6f00;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="Content">
+    <div class="Charts">
+        <a href="/Webdevelopment/"><i class="fas fa-laptop-code"></i>Web Development</a>
+        <a href="/Appdevelopment/"><i class="fas fa-mobile-alt"></i>App Development</a>
+        <a href="/Desktop/"><i class="fas fa-desktop"></i>Desktop Application</a>
+        <a href="/WebMaintence/"><i class="fas fa-tools"></i>Web Maintenance</a>
+        <a href="/WebRedisgning/"><i class="fas fa-sync-alt"></i>Web Redesigning</a>
+        <a href="#"><i class="fas fa-share-alt"></i>Social Media</a>
+        <a href="/SEO%20Services/"><i class="fas fa-search"></i>SEO Services</a>
+        <a href="/Digital/"><i class="fas fa-bullhorn"></i>Digital Marketing</a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stechweb Pricing</title>
+  <style>
+   
+    .list-price{
+        margin-top:100px;
+
+
+    }
+  
+  
+    .pricing h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 10px;
+      font-family:Serif;
+
+    }
+
+    .subtext {
+      text-align: center;
+      color: #666;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      line-height: 1.6;
+    }
+
+    .pricing {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .pricing-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 350px;
+      transition: transform 0.3s ease;
+      margin: 10px;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #222;
+      margin-bottom: 15px;
+      font-family:Times , New , Roman;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff6f00;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 20px;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .btn {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #ff6f00;
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.3s ease;
+      }
+      
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: #2c3e50; /* New background color on hover (dark blue) */
+        z-index: -1;
+        transition: left 0.4s ease;
+      }
+      
+      .btn:hover {
+        color: #fff;
+      }
+      
+      .btn:hover::before {
+        left: 0;
+      }
+      
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .subtext {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+      .pricing-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+
+      .price {
+        font-size: 18px;
+      }
+
+      .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<div class="list-price">
+  <div class="pricing">  
+    <h1>Explore Our Pricing</h1>
+    <p class="subtext">
+      At Stechweb, we offer flexible and transparent pricing to help you get started—whether you're launching a business website, building a mobile app, or boosting your online visibility. Choose a plan that suits your needs and scale effortlessly.
+    </p>
+  </div>
+
+  <div class="pricing-container">
+    <div class="card">
+      <h2>Web Development</h2>
+      <p>Responsive websites, dynamic pages, admin panels, and e-commerce solutions.</p>
+      <div class="price">₹10,000 – ₹90,000+</div>
+      <ul>
+        <li>✔ Static & Dynamic Sites</li>
+        <li>✔ Admin Dashboard</li>
+        <li>✔ E-commerce Integration</li>
+        <li>✔ SEO Ready</li>
+      </ul>
+      <a href="/Webdevelopment/" class="btn">Get Started</a>
+    </div>
+
+    <div class="card">
+      <h2>App Development</h2>
+      <p>Android/iOS apps with backend, API, admin panel, and scalable solutions.</p>
+      <div class="price">₹20,000 – ₹4,00,000+</div>
+      <ul>
+        <li>✔ Android / iOS Apps</li>
+        <li>✔ Firebase / Django API</li>
+        <li>✔ Admin Management</li>
+        <li>✔ UI/UX Focused</li>
+      </ul>
+      <a href="/Appdevelopment/" class="btn">Get Started</a>
+    </div>
+
+    <div class="card">
+      <h2>Digital Marketing</h2>
+      <p>Boost your brand with SEO, social media, and ads on Google & Meta.</p>
+      <div class="price">₹5,000 – ₹40,000 / Month</div>
+      <ul>
+        <li>✔ SEO (On & Off Page)</li>
+        <li>✔ Social Media Posts</li>
+        <li>✔ Ads Management</li>
+        <li>✔ Monthly Reports</li>
+      </ul>
+      <a href="/Digital/" class="btn">Get Started</a>
+    </div>
+  </div>
+</div>
+</html>

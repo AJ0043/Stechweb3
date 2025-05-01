@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stechweb - Transform Your Ideas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #888;
+    }
+
+    .Topic1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      margin-top: 60px;
+      gap: 50px;
+      background-color:rgb(211, 211, 211);
+    }
+
+    .Topic1 .content1 {
+      flex: 1;
+      max-width: 550px;
+      margin-left: 200px;
+    }
+
+    .Topic1 h3 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      font-family:Times , New , Roman;
+      color: #333;
+    }
+
+    .Topic1 p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .Topic1 a {
+      font-size: 16px;
+      color: #ff6f00;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .Topic1 a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background-color: #ff6f00;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .Topic1 a:hover {
+      color: #e65c00;
+    }
+
+    .Topic1 a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .Topic1 a i {
+      transition: transform 0.3s ease;
+    }
+
+    .Topic1 a:hover i {
+      transform: translateX(4px);
+    }
+
+    .Topic1 .image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .Topic1 img {
+      max-width: 100%;
+      width: 600px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Tablet Responsive */
+    @media (max-width: 1024px) {
+      .Topic1 {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .Topic1 .content1 {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .Topic1 .image {
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .Topic1 img {
+        width: 90%;
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .Topic1 {
+        padding: 20px 10px;
+      }
+
+      .Topic1 h3 {
+        font-size: 24px;
+      }
+
+      .Topic1 p {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+
+      .Topic1 img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="Topic1">
+    <div class="content1">
+      <h3>Our Services – Empowering Your Digital Vision</h3>
+      <p>At Stechweb, we don’t just build websites or apps — we craft digital experiences that captivate, convert, and create lasting impressions. Our mission goes beyond aesthetics; we blend cutting-edge technology with strategic thinking to deliver solutions that drive real business growth.
+
+        Whether you’re a visionary startup, a fast-scaling company, or a well-established brand, we tailor our services to align with your specific goals and industry needs. From intuitive UI/UX design to robust development and smart marketing integrations, every project we undertake is fueled by innovation, creativity, and measurable results.
+        
+        Partner with us, and let’s turn your ideas into impactful digital realities that move your business forward.</p>  
+     <a href="/Webdevelopment/">Read more <i class="fas fa-arrow-right"></i></a>
+    
+    </div>
+    <div class="image">
+      <img src="{% static 'Images/wewe.png' %}" alt="Stechweb Logo" />
+    </div>
+  </div>
+
+</body>
+</html>

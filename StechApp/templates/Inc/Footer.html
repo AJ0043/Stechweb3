@@ -1,0 +1,278 @@
+{% load static %}
+
+<!-- Footer Section -->
+<footer>
+  <div class="footer-logo">
+    <a href="#"><img src="{% static 'Images/ST67.png' %}" alt="Logo"></a>
+  </div>
+
+  <div class="footer-col about1">
+   <p>StechWeb is a dynamic and client-centric IT company dedicated to transforming digital ideas into powerful, functional, and visually stunning realities. Specializing in web development, app creation, desktop solutions, SEO, and digital marketing, we bring over years of combined industry expertise and innovation to every project.
+
+    Our mission is simple — deliver excellence with integrity, creativity, and a deep understanding of our clients' unique needs. From startups to established enterprises, we provide customized digital solutions that help businesses thrive in the digital age.
+    
+    </p>
+  </div>
+
+  <div class="footer-col services">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="/Webdevelopment/">→ Web Devlopment</a></li>
+      <li><a href="/Appdevelopment/">→ App development</a></li>
+      <li><a href="/Desktop/">→ Desktop Application</a></li>
+      <li><a href="/SEO%20Services/">→ SEO Services</a></li>
+      <li><a href="/Digital/">→ Digital marketing</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col company">
+    <h4>We're Here to Help</h4>
+    <ul>
+      <li><a href="/Contact/">→ Contact us</a></li>
+      <li><a href="/feedback/">→ Feedback</a></li>
+      <li><a href="/Jobs/">→ Carrier</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="footer-col follow">
+    <h4>Follow Us</h4>
+    <div class="links">
+        <a href="https://wa.me/8949167574" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/anvesh.jain.600593/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/stechweb56/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@surgerygyan" target="_blank"><i class="fab fa-youtube"></i></a>
+
+    </div>
+
+    <div class="contact-under-social">
+      <p><i class="fas fa-phone-alt"></i> +91 8949167574</p>
+      <p><i class="fas fa-map-marker-alt"></i> Swastik Traders Rajakhera<br>Pin:328025,Dholpur.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Small Footer Bar -->
+<div class="footer-bottom">
+  <p>© 2025 Surgical Solutions. All rights reserved.</p>
+</div>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+/* Main Footer Styling */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background:#1212;
+  padding: 40px 5%;
+  color: black;
+  position: relative;
+  margin-top:px;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+  margin: 15px;
+}
+
+.footer-col.about1 {
+  margin-top: -20px;
+  max-width: 450px;
+}
+
+.footer-col h4 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: orange;
+  transition: width 0.4s ease;
+}
+
+.footer-col h4:hover::after {
+  width: 100%;
+}
+
+.footer-col p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #ff6f00;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Lora', serif;
+  display: inline-block;
+  transition: 0.3s;
+  position: relative;
+
+}
+
+.footer-col ul li a:hover {
+  color: orange;
+  transform: translateX(5px);
+}
+
+/* Opening Hours */
+.opening-hours {
+  color: #333;
+  font-size: 19px;
+  font-family: 'Lora', serif;
+  margin-left: 10px;
+}
+
+/* Social Media */
+.links a {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background-color: #ff6f00;
+  color: white;
+  border-radius: 50%;
+  line-height: 45px;
+  margin: 5px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+.links a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.links a:hover::before {
+  top: 0;
+}
+
+.links a:hover {
+  color: orange;
+}
+
+/* 🔹 Contact Info below Social */
+.contact-under-social {
+  margin-top: 15px;
+}
+
+.contact-under-social p {
+  font-size: 20px;
+  color: #333;
+  margin: 5px 0;
+  font-family: Serif;
+}
+
+.contact-under-social i {
+  margin-right: 10px;
+  color:#ff6f00;
+}
+
+/* Logo */
+.footer-logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+ 
+}
+
+/* Logo Image */
+.footer-logo img {
+  height: 60px;
+  border-radius:50px;
+}
+
+/* Bottom Footer */
+.footer-bottom {
+  background-color: #ff6f00;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-logo {
+    order: 0;
+  }
+
+  .footer-logo img {
+    height: 50px;
+  }
+
+  .footer-col.about1 {
+    order: 1;
+    max-width: 100%;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  .footer-col {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-col h4 {
+    font-size: 20px;
+  }
+
+  .footer-col p,
+  .footer-col ul li a,
+  .opening-hours,
+  .contact-under-social p {
+    font-size: 15px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+
+  .links a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+</style>
+

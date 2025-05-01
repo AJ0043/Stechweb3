@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Service Request PDF</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .header {
+            background-color: #6A4A06;
+            color: white;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        .header img {
+            max-height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 5px 0 10px;
+            font-size: 24px;
+        }
+
+        .header p {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .content {
+            padding: 30px 40px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 30px 0 15px;
+            color: #014D4E;
+            border-bottom: 2px solid #014D4E;
+            padding-bottom: 5px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .field {
+            margin-bottom: 12px;
+        }
+
+        .field strong {
+            width: 180px;
+            display: inline-block;
+            color: #014D4E;
+        }
+
+        .footer {
+            background-color: #014D4E;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 12px;
+            margin-top: 40px;
+        }
+
+        /* Optional divider between sections */
+        .divider {
+            height: 2px;
+            background-color: #eee;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="{{ request.build_absolute_uri }}/static/images/ST67.png" alt="StechWeb Logo">
+        <h1>StechWeb - Service Request Form</h1>
+        <p>Thank you for choosing StechWeb for your digital solutions. Here's a copy of your submitted request.</p>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Client Details -->
+        <h2>Client Details</h2>
+        <div class="section">
+            <div class="field"><strong>Full Name:</strong> {{ name }}</div>
+            <div class="field"><strong>Email:</strong> {{ email }}</div>
+            <div class="field"><strong>Phone:</strong> {{ phone }}</div>
+            <div class="field"><strong>Industry:</strong> {{ industry }}</div>
+            <div class="field"><strong>Department:</strong> {{ department }}</div>
+            <div class="field"><strong>Company Size:</strong> {{ company_size }}</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Project Details -->
+        <h2>Project Details</h2>
+        <div class="section">
+            <div class="field"><strong>Pages Required:</strong> {{ page_range }}</div>
+            <div class="field"><strong>Product/Services:</strong> {{ product_services }}</div>
+            <div class="field"><strong>Website Type:</strong> {{ website_type }}</div>
+            <div class="field"><strong>App Type:</strong> {{ app_type }}</div>
+            <div class="field"><strong>Desktop Package:</strong> {{ desktop_package }}</div>
+            <div class="field"><strong>Digital Package:</strong> {{ digital_package }}</div>
+            <div class="field"><strong>Price Negotiation:</strong> {{ price_negotiation }}</div>
+            <div class="field"><strong>Message:</strong> {{ message }}</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        StechWeb Digital Pvt. Ltd.<br>
+        Near Sector 63, Noida, Uttar Pradesh, India<br>
+        <a href="https://www.stechweb.in" style="color: white; text-decoration: underline;">www.stechweb.in</a> |
+        info@stechweb.in |
+        +91-8949167574
+    </div>
+
+</body>
+</html>
