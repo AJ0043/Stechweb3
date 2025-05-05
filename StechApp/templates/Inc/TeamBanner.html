@@ -16,12 +16,12 @@
     #team-section {
       background: #fff;
       padding: 60px 20px;
-      height:900px;
     }
 
     #team-section .team-header {
       text-align: center;
       margin-bottom: 40px;
+      padding: 0 10px;
     }
 
     #team-section .team-header h3 {
@@ -65,6 +65,8 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
+      user-select: none;
+      pointer-events: none;
     }
 
     #team-section .member-name {
@@ -83,6 +85,7 @@
       display: flex;
       justify-content: center;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     #team-section .member-socials img {
@@ -90,35 +93,49 @@
       height: 30px;
       border-radius: 50%;
       transition: transform 0.3s ease;
+      user-select: none;
     }
 
     #team-section .member-socials a:hover img {
       transform: scale(1.1);
     }
 
-    /* Responsive Design for Tablets */
+    /* Tablet */
     @media (max-width: 992px) {
+      #team-section {
+        padding: 50px 15px;
+      }
+
       #team-section .team-member {
-        width: 45%; /* Two items per row on tablets */
+        width: 45%;
       }
 
       #team-section .team-header h3 {
-        font-size: 26px;
+        font-size: 28px;
       }
     }
 
-    /* Responsive Design for Mobile */
+    /* Mobile */
     @media (max-width: 768px) {
+      #team-section {
+        padding: 40px 10px;
+      }
+
       #team-section .team-member {
-        width: 90%; /* One item per row on mobile */
+        width: 90%;
       }
 
       #team-section .team-header h3 {
-        font-size: 22px;
+        font-size: 24px;
       }
 
       #team-section .team-header p {
         font-size: 16px;
+      }
+
+      #team-section .member-image {
+        width: 80px;
+        height: 80px;
       }
     }
   </style>
@@ -136,7 +153,7 @@
       <div class="team-member">
         <img class="member-image" src="{% static 'images/LOKK.jpg' %}" alt="Lokesh Jain">
         <h4 class="member-name">Lokesh Jain</h4>
-        <p class="member-role"> Proprietor </p>
+        <p class="member-role">Proprietor</p>
         <div class="member-socials">
           <a href="https://facebook.com/lokeshjain" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
           <a href="https://instagram.com/lokeshjain" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
@@ -151,11 +168,11 @@
         <h4 class="member-name">Anvesh Jain</h4>
         <p class="member-role">Python Django Developer</p>
         <div class="member-socials">
-            <a href="https://www.facebook.com/profile.php?id=100089802446408" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/in/anvesh-jain-22875b264/" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
-            <a href="https://wa.me/918949167574" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
-          </div>
+          <a href="https://www.facebook.com/profile.php?id=100089802446408" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+          <a href="https://www.instagram.com/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
+          <a href="https://www.linkedin.com/in/anvesh-jain-22875b264/" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+          <a href="https://wa.me/918949167574" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
+        </div>
       </div>
 
       <!-- Member 3 -->
@@ -164,24 +181,24 @@
         <h4 class="member-name">Garvish Jain</h4>
         <p class="member-role">Node.js Developer</p>
         <div class="member-socials">
-            <a href="https://www.facebook.com/garvish.jain" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
-            <a href="https://www.instagram.com/garvish.jain/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADHP9WcB_Uqt6j-zy3M9QdTXNSHrrKksQFY&keywords=garvish%20jain&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=b7759f93-5111-4b84-a916-912ef3d77534&sid=%2Clk&spellCorrectionEnabled=true" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
-            <a href="https://wa.me/918305104770" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
-          </div>
+          <a href="https://www.facebook.com/garvish.jain" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+          <a href="https://www.instagram.com/garvish.jain/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
+          <a href="https://www.linkedin.com/in/garvish-jain" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+          <a href="https://wa.me/918305104770" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
+        </div>
       </div>
 
       <!-- Member 4 -->
       <div class="team-member">
-        <img class="member-image" src="{% static 'images/GO.jpeg' %}" alt="Rahul Mohar">
+        <img class="member-image" src="{% static 'images/GO.jpeg' %}" alt="Govind Gupta">
         <h4 class="member-name">Govind Gupta</h4>
-        <p class="member-role">Project Tester </p>
+        <p class="member-role">Project Tester</p>
         <div class="member-socials">
-            <a href="https://www.facebook.com/profile.php?id=100009213734159" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
-            <a href="https://www.instagram.com/govind_alapuriya/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAC4v7L4BsA1w5ORErp24xBXNcJ_i1uEvmgE&keywords=govind%20alapuriya&origin=RICH_QUERY_SUGGESTION&position=0&searchId=d19580fe-e7ca-416e-8685-94872fb6fd96&sid=eaN&spellCorrectionEnabled=false" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
-            <a href="https://wa.me/918440856480" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
-          </div>
+          <a href="https://www.facebook.com/profile.php?id=100009213734159" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+          <a href="https://www.instagram.com/govind_alapuriya/" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
+          <a href="https://www.linkedin.com/in/govind-alapuriya" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+          <a href="https://wa.me/918440856480" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
+        </div>
       </div>
 
       <!-- Member 5 -->
@@ -190,9 +207,9 @@
         <h4 class="member-name">Rahul Mohar</h4>
         <p class="member-role">Consultant</p>
         <div class="member-socials">
-          <a href="" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
+          <a href="#" target="_blank"><img src="{% static 'Images/Fa.webp' %}" alt="Facebook"></a>
           <a href="https://instagram.com/lokeshjain" target="_blank"><img src="{% static 'Images/Ins.webp' %}" alt="Instagram"></a>
-          <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADld7v4BORwKA434WKVMK86Njm-GS1wUVe0&keywords=rahul%20kumar%20mahor&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=96c3bc81-2f38-432b-bfa4-35ea166aa2fe&sid=.B%3B&spellCorrectionEnabled=true" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
+          <a href="https://www.linkedin.com/in/rahul-kumar-mahor" target="_blank"><img src="{% static 'Images/in.png' %}" alt="LinkedIn"></a>
           <a href="https://wa.me/918650352670" target="_blank"><img src="{% static 'Images/ww.svg' %}" alt="WhatsApp"></a>
         </div>
       </div>
